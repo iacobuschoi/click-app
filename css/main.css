@@ -96,10 +96,16 @@ body{
 }
 
 .popup-content {
+    font-family: 'Courier New', Courier, monospace;
     background-color: white;
     padding: 2em;
     border-radius: 10px;
     text-align: center;
+}
+
+.input {
+    border: 0;
+    border-bottom: 1px solid lightgray;
 }
 
 .timer {
