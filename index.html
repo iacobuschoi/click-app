@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mint Lab</title>
-        <link rel="stylesheet" href="./css/main.css">
-    </head>
-    <body>
-        <div class="top-bar">
-            <div class="logo">
-                <img src="./images/logo.jpg">
-                <p class="logo-title">Minpaper</p>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Mint Lab Game</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- Username Popup -->
+    <div id="usernamePopup" class="popup">
+        <div class="popup-content">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" />
+            <button id="startGame">Start Game</button>
         </div>
-        <div class ="screen">
-            <div class="hide">
-                <button class="hide-button">Click</button>    
-            </div>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer" class="timer"></div>
+
+    <!-- Game Over Popup -->
+    <div id="gameOverPopup" class="popup">
+        <div class="popup-content">
+            <p>Game Over!</p>
+            <p id="scoreDisplay">Your Score: 0</p>
+            <button id="restartGame">Restart</button>
         </div>
-    </body>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="top-bar">
+        <div class="logo">
+            <img src="./images/logo.jpg">
+            <p class="logo-title">Minpaper</p>
+        </div>
+    </div>
+    <div class ="screen">
+        <div class="hide">
+            <button class="hide-button">Click</button>    
+        </div>
+    </div>
+
     <script src="./js/button.js"></script>
+    <script src="./pages/gameManager.js"></script>
+    <script type='application/json' src="./pages/api/savescore.js"></script>
+</body>
 </html>

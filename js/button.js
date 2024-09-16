@@ -108,7 +108,7 @@ class ButtonAnimator {
         if (this.hideCount > this.hideConutLimit) {
             this.hideCountInit();
             const animationName = 'hide-special-move';
-            const zValue = 500;
+            const zValue = 300;
             const rotateValue = 180;
             this.createKeyframes(
                 this.lastHideX,
