@@ -126,7 +126,7 @@ class ButtonAnimator {
                 this.hide.style.transform = `translateX(${this.hideX}px) translateY(${this.hideY}px)`;
             }, { once: true });
         } else {
-            this.hide.style.transition = `all ${0.1*this.hideCount}s ease-out`;
+            this.hide.style.transition = `all ${0.2*this.hideCount}s ease-out`;
             this.hide.style.transform = `translateX(${this.hideX}px) translateY(${this.hideY}px)`;
             this.hide.addEventListener('transitionend', () => {
                 this.isMove = false;
@@ -167,10 +167,11 @@ class GameManager {
     }
 
     startGame() {
-        // Get the username and start the game
         this.username = document.getElementById('username').value;
-        if (this.username === "") return; // Prevent starting without a name
+        if (this.username === "") return;
 
+        const title = document.getElementById('title');
+        title.innerHTML = `${this.username}`;
         this.closePopup('usernamePopup');
         this.startTimer();
     }
@@ -197,15 +198,29 @@ class GameManager {
     endGame() {
         clearInterval(this.timerInterval);
 
-        // Show game-over pop-up
         this.showPopup('gameOverPopup');
         document.getElementById('scoreDisplay').innerHTML = `Your Score: ${this.score}`;
-
-        // Save score to server
-        this.saveScore();
     }
 
     restartGame() {
+        while(1){
+            const button = document.querySelector('.hide');
+            if(!button) break;
+            button.remove();
+        }
+
+        const screen = document.querySelector('.screen');
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('hide');
+
+        const newButton = document.createElement('button');
+        newButton.classList.add('hide-button');
+        newButton.innerText = "click";
+        newDiv.appendChild(newButton);
+
+        screen.appendChild(newDiv);
+        new ButtonAnimator(newDiv, (window.innerWidth - newDiv.offsetWidth)/2, (window.innerHeight-newDiv.offsetHeight)/2);
+
         this.score = 0;
         this.startGame();
         this.closePopup('gameOverPopup');

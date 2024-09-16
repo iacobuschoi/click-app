@@ -9,21 +9,28 @@
     <!-- Username Popup -->
     <div id="usernamePopup" class="popup">
         <div class="popup-content">
-            <label for="username">Enter your name:</label>
-            <input class="input" type="text" id="username" />
-            <button class="input" id="startGame">v</button>
+            <div style="
+                margin-bottom: 1em; 
+                padding-bottom: 1em; 
+                border-bottom: 1px solid lightgray;
+                font-size: large;
+                "
+            >Thank you for visiting my toy project. Enter your name to start
+            </div>
+            <div class="input">
+                <label for="username">ID </label>
+                <input type="text" class="input-type" id="username" />
+                <button class="input" id="startGame">v</button>
+            </div>
         </div>
     </div>
-
-    <!-- Timer -->
-    <div id="timer" class="timer"></div>
 
     <!-- Game Over Popup -->
     <div id="gameOverPopup" class="popup">
         <div class="popup-content">
             <p>Game Over!</p>
             <p id="scoreDisplay">Your Score: 0</p>
-            <button id="restartGame">Restart</button>
+            <button class="restart-button" id="restartGame">Restart</button>
         </div>
     </div>
 
@@ -31,8 +38,10 @@
     <div class="top-bar">
         <div class="logo">
             <img src="./images/logo.jpg">
-            <p class="logo-title">Minpaper</p>
+            <p class="logo-title" id="title">Minpaper</p>
         </div>
+        <!-- Timer -->
+        <div id="timer" class="timer"></div>
     </div>
     <div class ="screen">
         <div class="hide">

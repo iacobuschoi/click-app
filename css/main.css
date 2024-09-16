@@ -66,7 +66,6 @@ body{
     }
 }
 
-
 @keyframes hover-animation{
     0%{
         transform: rotateZ(-5deg);
@@ -79,9 +78,6 @@ body{
     }
 }
 
-
-
-/* Pop-up styling */
 .popup {
     display: none;
     position: fixed;
@@ -97,25 +93,70 @@ body{
 
 .popup-content {
     font-family: 'Courier New', Courier, monospace;
+    font-size: large;
     background-color: white;
-    padding: 2em;
-    border-radius: 10px;
+    padding: 2.5em;
+    border-radius: 1.5em;
+    width:20em;
     text-align: center;
+    perspective: 2000px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
 }
 
-.input {
+.restart-button{
+    padding:0.5em;
+    background-color: white;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 0.5em;
     border: 0;
+    
+    color:rgb(24, 24, 24);
+    font-family:'Courier New', Courier, monospace;
+    font-size:large;
+
+    transform-style: preserve-3d;
+    transition: all .3s ease;
+}
+.restart-button:hover {
+    
+    transform: translateZ(30px);
+}
+
+
+.input {
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+    
+    border: 0;
+    border-radius: 1em;
     border-bottom: 1px solid lightgray;
+    padding: 0.5em;
+    
+    font-family: 'Courier New', Courier, monospace;
+
+    transform-style: preserve-3d;
+    transition: all .3s ease;
+}
+.input:hover {
+    transform: translateZ(30px);
+}
+.input-type {
+    border:0;
+    border-bottom: 1px solid lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+input:focus {
+    outline:none;
 }
 
 .timer {
     position: fixed;
-    top: 10px;
     right: 20px;
     font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
 }
 
-/* Show popup when needed */
 .popup.show {
     display: flex;
 }
