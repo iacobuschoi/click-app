@@ -79,7 +79,7 @@ class GameManager {
         const data = { username: this.username, score: this.score };
 
         try {
-            const response = await fetch('pages/api/saveScore', {
+            const response = await fetch('api/saveScore', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
